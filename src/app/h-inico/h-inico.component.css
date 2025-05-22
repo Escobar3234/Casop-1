@@ -1,0 +1,336 @@
+.fab-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border: none;
+}
+
+.bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.tab {
+  text-align: center;
+  flex: 1;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.tab ion-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+
+.background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/poo.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  z-index: -1;
+}
+/* Calendario */
+.selected {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.today {
+  border: 2px solid #2196f3;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.wrapper-calendar {
+  margin: 0rem;
+  padding: 0rem;
+  border: solid 1px #eaeaea;
+  box-shadow: 0 0 0px #e4e4e4;
+}
+
+
+.header-calendar button ion-icon {
+  color: black !important;
+  font-size: 24px;
+}
+
+
+.seleccionado {
+  background-color: #e0f7fa;
+  font-weight: bold;
+}
+
+
+
+div {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-bottom: 3px solid #eaeaea;
+}
+ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 0rem;
+  font-size: 2ch;
+  cursor: pointer;
+}
+
+li:hover {
+  font-weight: 900;
+}
+
+.day-name {
+  background: #eee;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 9px;
+  padding: 9px;
+  text-align: center;
+}
+
+.header-calendar {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  border-bottom: 3px solid #eaeaea;
+}
+
+.header-calendar h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-calendar button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  width: 40px;
+  height: 40px;
+  size: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: #3e8e41;
+}
+
+/* Modal */
+.fab-container {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 100;
+}
+
+.fab-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-options {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.fab-options button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.fab-options button:hover {
+  background-color: #e0e0e0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* completamente fuera de pantalla */
+  width: 250px;
+  height: 100%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  z-index: 1001;
+}
+
+.sidebar.open {
+  left: 0; /* aparece */
+}
+
+.sidebar h3 {
+  text-align: left;
+  font-weight: bold;
+}
+
+.sidebar p {
+  text-align: left;
+  font-size: 14px;
+}
+
+.sidebar ul {
+  
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Fondo para cerrar la barra haciendo clic afuera */
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.div-final {
+  position: fixed;
+  bottom: 0;
+}
+
+.div-final p {
+  width: 60%;
+  height: 60px;
+  text-align: left; /* opcional, para centrar el texto */
+  font-size: 22px;     /* ⬅️ Aquí aumentas el tamaño */
+  font-weight: bold;   /* opcional, para resaltar más */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

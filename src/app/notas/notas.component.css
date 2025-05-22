@@ -1,0 +1,47 @@
+.barra-navegacion {
+  position: fixed;
+  top: 0;
+  width: 89%;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+}
+
+.grid-notas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 5rem 1rem 1rem;
+}
+
+.nota {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores por categoría */
+.trabajos {
+  background-color: #0074D9;
+}
+
+.ideas {
+  background-color: #FF851B;
+}
+
+.compras {
+  background-color: #2ECC40;
+}
+
+.por-hacer {
+  background-color: #B10DC9;
+}
+
+/* Estilos extra para etiquetas */
+.categoria {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}

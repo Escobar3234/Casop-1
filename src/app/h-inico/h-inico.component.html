@@ -1,0 +1,120 @@
+<div class="background"></div>
+<div class="top-bar">
+  <div class="dropdown" [class.open]="isDropdownOpen">
+
+    <button class="dropdown-button" (click)="toggleSidebar()"><img src="assets/icono_menu.png" alt=""></button>
+    <div class="dropdown-content" *ngIf="isDropdownOpen">
+      <a (click)="irAHabitos(); toggleDropdown()">Hábitos</a>
+      <a (click)="irAPerfil(); toggleDropdown()">Perfil</a>
+      <a (click)="irANotas(); toggleDropdown()">Notas</a>
+      <a (click)="toggleDropdown()">Cerrar</a>
+    </div>
+  </div>
+  <span class="selected-info">
+    {{ selectedDayValue === today.date() && dateSelect.isSame(today, 'month') ? 'Hoy' : 'Día ' + selectedDayValue }}
+  </span>
+</div>
+
+<!-- Barra lateral -->
+<div class="sidebar" [class.open]="isSidebarVisible">
+  <h3>Hola Usuario,<br>Bienvenido a Takumi Notes.<br><br> para el usuario:</h3>
+
+  <p>
+    Tu día es una oportunidad para crecer Cada amanecer trae consigo la posibilidad de avanzar, de mejorar y de construir la vida que deseas. A veces, la clave para lograrlo no está en hacer más, sino en hacerlo mejor.<br>
+    <br>
+    Organiza tu día con notas, pequeñas herramientas que te ayudarán a visualizar lo que realmente importa. Anota tus prioridades, fija objetivos alcanzables y celebra cada pequeño progreso.<br>
+    <br>
+    Pequeños hábitos, grandes cambios:</p>
+    <ul>
+      <li>Dedica unos minutos cada mañana para escribir lo que quieres lograr.</li>
+      <li>Haz pausas estratégicas para reajustar tu enfoque si te desvías.</li>
+      <li>Evalúa tu jornada al final del día y reconoce tus avances, por pequeños que sean.</li>
+    </ul>
+    <p>Recuerda que la organización no es sobre llenar tu día de tareas, sino sobre darle sentido y equilibrio. Tu bienestar y tu éxito empiezan con un solo paso.<br>
+    <br>
+    Haz de hoy un día que realmente sume a tu vida. Tú puedes lograrlo.</p>
+
+  <div class="div-final">
+    <p>{{ fechaActual | date:'fullDate' }}</p>
+  </div>
+  
+</div>
+
+<!-- Capa para cerrar la sidebar al hacer clic fuera -->
+<div class="sidebar-backdrop" *ngIf="isSidebarVisible" (click)="toggleSidebar()"></div>
+
+<!-- Calendario -->
+<div class="wrapper-calendar">
+  <div class="header-calendar">
+    <button (click)="changeMonth(-1)" class="btn-prev">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </button>
+    <h1>{{ dateSelect.format('MMMM, YYYY') }}</h1>
+    <button (click)="changeMonth(1)" class="btn-next">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </button>    
+  </div>
+
+  <!-- Nombres de los días -->
+  <ol>
+    <li *ngFor="let day of week" class="day-name">{{ day | slice: 0:3 }}</li>
+
+    <!-- Días del mes -->
+    <li
+      *ngFor="let day of monthSelect; let i = index"
+      [ngClass]="{
+        'selected': day?.value === selectedDayValue && dateSelect.isSame(today, 'month'),
+        'today': day?.value === today.date() && dateSelect.isSame(today, 'month')
+      }"
+      [style.gridColumnStart]="day ? i === 0 ? day.indexWeek : 'auto' : 'auto'"
+      (click)="clickDay(day)"
+    >
+      <span *ngIf="day">{{ day?.value }}</span>
+    </li>
+  </ol>
+</div>
+
+<!-- Mostrar hábitos debajo del calendario -->
+<div class="habit-list">
+  <h3 *ngIf="habitosFiltrados.length > 0">Hábitos para el día {{ selectedDayValue }}:</h3>
+  <ul *ngIf="habitosFiltrados.length > 0">
+    <li *ngFor="let habito of habitosFiltrados"
+        (click)="toggleSeleccion(habito)"
+        [class.seleccionado]="esSeleccionado(habito)"
+        style="cursor: pointer; padding: 8px; border-radius: 6px; margin-bottom: 5px; display: flex; align-items: center;">
+        
+      <span style="margin-right: 8px;" *ngIf="esSeleccionado(habito)">✅</span>
+      
+      <div>
+        <strong *ngIf="esSeleccionado(habito)">{{ habito.nombre }}</strong>
+        <span *ngIf="!esSeleccionado(habito)">{{ habito.nombre }}</span>
+        - {{ habito.descripcion || habito.valor || '' }}<br>
+        <em>Frecuencia: {{ habito.tipo }}</em>
+      </div>
+    </li>
+  </ul>
+  <p *ngIf="habitosFiltrados.length === 0">No hay hábitos para este día.</p>
+</div>
+
+
+
+<!-- FAB (botón +) -->
+<div class="fab-container">
+  <button class="fab-button" (click)="toggleFab()">+</button>
+  <div class="fab-options" *ngIf="fabOpen">
+    <button (click)="irAHabitos(); toggleFab()">Hábitos</button>
+    <button (click)="irANuevaNota(); toggleFab()">Notas</button>
+  </div>
+</div>
+
+<!-- Bottom Tabs -->
+<div class="bottom-tabs">
+  <div class="tab" (click)="irAHabitos()">
+    <ion-icon name="list-outline"></ion-icon>
+    <span>Hábitos</span>
+  </div>
+  <div class="tab" (click)="irANotas()">
+    <ion-icon name="create-outline"></ion-icon>
+    <span>Notas</span>
+  </div>
+</div>

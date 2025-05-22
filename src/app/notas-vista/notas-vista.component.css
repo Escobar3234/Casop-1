@@ -1,0 +1,73 @@
+.notas-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.barra-superior h2 {
+  margin: 0 0 10px 0;
+}
+
+.categorias button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.categorias button.seleccionado {
+  background-color: #42a5f5;
+  color: white;
+}
+
+.lista-notas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nota {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nota h3 {
+  margin-top: 0;
+}
+
+.nota .fecha {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #555;
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.fab-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 28px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}

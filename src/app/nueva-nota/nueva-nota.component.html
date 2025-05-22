@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h2>Crear Nueva Nota</h2>
+  <form (ngSubmit)="guardarNota()">
+    <label for="titulo">Título:</label>
+    <input id="titulo" [(ngModel)]="titulo" name="titulo" required>
+
+    <label for="contenido">Contenido:</label>
+    <textarea id="contenido" [(ngModel)]="contenido" name="contenido" rows="5" required></textarea>
+
+    <label for="categoria">Categoría:</label>
+    <select id="categoria" [(ngModel)]="categoria" name="categoria" required>
+      <option value="trabajos">Trabajos</option>
+      <option value="ideas">Ideas</option>
+      <option value="compras">Compras</option>
+      <option value="por-hacer">Por-hacer</option>
+    </select>
+
+    <button type="submit">Guardar Nota</button>
+  </form>
+</div>

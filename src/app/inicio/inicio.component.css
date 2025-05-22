@@ -1,0 +1,48 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    color: white;
+}
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/fondo1.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.25);
+    z-index: -1;
+}
+
+.emblem img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 250px;
+    filter: brightness(1);
+    position: relative;
+}
+
+.text-button {
+    display: flex;
+    font-size: 2rem; /* Ajusta el tamaño según tus necesidades */
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+
+    text-shadow: 0 0 10px white;
+    margin: 250px 0; /* Espaciado adicional para un buen diseño */
+}
+
+.text-button:hover {
+    color: #f5a623; /* Cambia el color al pasar el mouse */
+    text-shadow: 0 0 5px #f5a623; /* Efecto de brillo */
+    cursor: pointer; /* Muestra el cursor de mano */
+}

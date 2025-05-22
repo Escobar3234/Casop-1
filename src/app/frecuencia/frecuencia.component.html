@@ -1,0 +1,46 @@
+<div class="frecuencia-container">
+
+    <h2 class="title">¿Con qué frecuencia quieres realizarlo?</h2>
+  
+    <!-- Opción 1: Todos los días -->
+    <div class="opcion-frecuencia">
+      <label>
+        <input type="radio" name="frecuencia" value="todos" [(ngModel)]="frecuencia.tipo" />
+        Todos los días
+      </label>
+    </div>
+  
+    <!-- Opción 2: Días específicos de la semana -->
+    <div class="opcion-frecuencia">
+      <label>
+        <input type="radio" name="frecuencia" value="semana" [(ngModel)]="frecuencia.tipo" />
+        Días específicos de la semana
+      </label>
+    </div>
+  
+    <div *ngIf="frecuencia.tipo === 'semana'" class="dias-semana">
+      <label *ngFor="let dia of diasSemana" class="dia-checkbox">
+        <input type="checkbox" [value]="dia" (change)="toggleDiaSemana(dia, $event)" />
+        {{ dia }}
+      </label>
+    </div>
+  
+    <!-- Opción 3: Días específicos del mes -->
+    <div class="opcion-frecuencia">
+      <label>
+        <input type="radio" name="frecuencia" value="mes" [(ngModel)]="frecuencia.tipo" />
+        Días específicos del mes
+      </label>
+    </div>
+  
+    <div *ngIf="frecuencia.tipo === 'mes'" class="dias-mes">
+      <label *ngFor="let dia of diasDelMes" class="dia-checkbox">
+        <input type="checkbox" [value]="dia" (change)="toggleDiaMes(dia, $event)" />
+        {{ dia }}
+      </label>
+    </div>
+  
+    <button (click)="guardarHabito()" class="boton-final">Guardar frecuencia</button>
+
+
+</div>

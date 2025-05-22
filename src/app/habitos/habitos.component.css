@@ -1,0 +1,64 @@
+.background {
+  margin-top: 40;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  height: 100vh;
+}
+
+.background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/poo.jpg');
+  background-size: cover;
+  background-position: center;  
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
+    width: 95%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background: rgba(128, 128, 128, 0.5);
+    color: black;
+  }
+  .boton-final {
+    margin-top: 20px;
+    background-color: #b31111;
+    color: white;
+    font-family: 'Sawarabi Mincho', serif;
+    border-radius: 20px;
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  
+  .boton-final button:hover {
+    background-color: #777;
+  }

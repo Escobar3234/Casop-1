@@ -1,0 +1,15 @@
+
+<div class="background">
+    <h2 class="title">Define Tu Habito</h2>
+  
+    <label for="nombre">Hábito</label>
+    <input id="nombre" type="text" placeholder="Escribe aquí" [(ngModel)]="habito.nombre" />
+  
+    <label for="descripcion">Descripción (Opcional)</label>
+    <textarea id="descripcion" rows="4" placeholder="Escribe aquí" [(ngModel)]="habito.descripcion"></textarea>
+  
+    <!-- Botón para guardar el hábito -->
+    <button (click)="guardarHabito()" class="boton-final">Guardar Hábito</button>
+  </div>
+
+

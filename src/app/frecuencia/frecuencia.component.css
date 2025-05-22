@@ -1,0 +1,57 @@
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: auto;
+}
+.frecuencia-container {
+  margin-top: 40;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  height: 100vh;
+  }
+  
+
+
+  .dias-semana label, .dias-mes label {
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  .opcion-frecuencia {
+    margin-bottom: 20px;
+  }
+
+  .opcion-frecuencia label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .dias-semana, .dias-mes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 20px;
+  }
+  
+  .dia-checkbox {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  .boton-final {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Sawarabi Mincho', serif;
+    border-radius: 20px;
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  
+  .boton-final button:hover {
+    background-color: #777;
+  }
