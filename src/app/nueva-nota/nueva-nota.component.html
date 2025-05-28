@@ -1,3 +1,4 @@
+<body class="background">
 <div class="form-container">
   <h2>Crear Nueva Nota</h2>
   <form (ngSubmit)="guardarNota()">
@@ -17,4 +18,10 @@
 
     <button type="submit">Guardar Nota</button>
   </form>
+
 </div>
+<!-- Botón flotante de retroceso -->
+<button class="fab-back" (click)="irAInicio()">
+  ←
+</button>
+

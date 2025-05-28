@@ -4,37 +4,54 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
 }
-
 /* Fondo con imagen borrosa y detrás del contenido */
+.fab-back {
+  position: fixed;
+  bottom: 80px; /* un poco más arriba que el botón + */
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab-back:hover {
+  background-color: #303f9f;
+}
+
 .background::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background-image: url('/assets/poo.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
   filter: blur(4px) brightness(0.6);
 }
-
 .form-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px 40px;
+  background-image: url('/assets/poo.jpg');
+  padding: 80px 90px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   max-width: 400px;
-  width: 100%;
   box-sizing: border-box;
   z-index: 1;
 }
-
 .form-container h2 {
+  background-image: url('/assets/poo.jpg');
   text-align: center;
   margin-bottom: 24px;
   color: #333;

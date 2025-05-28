@@ -31,4 +31,7 @@ export class NuevaNotaComponent {
 
     this.router.navigate(['/notas']);
   }
+  irAInicio() {
+    this.router.navigate(['/h-inico']); // Ajusta la ruta si es diferente
+  }
 }

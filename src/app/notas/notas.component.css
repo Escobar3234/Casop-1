@@ -1,3 +1,14 @@
+.background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('/assets/poo.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: blur(4px) brightness(0.6);
+}
 .barra-navegacion {
   position: fixed;
   top: 0;
@@ -44,4 +55,22 @@
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: bold;
+}
+.fab-back {
+  position: fixed;
+  bottom: 80px; /* un poco más arriba que el botón + */
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
