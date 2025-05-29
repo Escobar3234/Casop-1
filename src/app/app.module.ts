@@ -19,7 +19,11 @@ import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
 
 
 @NgModule({
-  declarations: [
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    CommonModule,
     AppComponent,
     InicioComponent,
     OpcionesComponent,
@@ -29,12 +33,6 @@ import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
     FrecuenciaComponent,
     NotasVistaComponent,
     NuevaNotaComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    CommonModule,
     IonicModule.forRoot(),
     RouterModule.forRoot([
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -52,6 +50,6 @@ import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // <-- Esto permite usar los tags de Ionic
   providers: [],
-  bootstrap: [AppComponent]
+
 })
 export class AppModule { }
