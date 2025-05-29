@@ -27,4 +27,7 @@ export class HabitosComponent {
     // Después de guardar, redirige al componente de frecuencia
     this.router.navigate(['/frecuencia']); // Asegúrate de que la ruta '/frecuencia' esté configurada
   }
+  irAInicio() {
+    this.router.navigate(['/h-inico']); // Ajusta la ruta si es diferente
+  }
 }

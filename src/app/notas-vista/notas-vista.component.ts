@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 
 @Component({
+  standalone: true,
   selector: 'app-notas-vista',
   templateUrl: './notas-vista.component.html',
   styleUrls: ['./notas-vista.component.css']

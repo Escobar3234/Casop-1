@@ -8,8 +8,9 @@ describe('NotasVistaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NotasVistaComponent],
-      imports: [RouterTestingModule] // Importar RouterTestingModule para el router
+      imports: [RouterTestingModule,
+        NotasVistaComponent,
+      ] // Importar RouterTestingModule para el router
     }).compileComponents();
 
     fixture = TestBed.createComponent(NotasVistaComponent);

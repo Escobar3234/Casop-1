@@ -152,5 +152,9 @@ export class FrecuenciaComponent {
       console.error("localStorage no está disponible.");
     }
   }
+
+  irAInicio() {
+    this.router.navigate(['/habitos/:fecha']); // Ajusta la ruta si es diferente
+  }
   
 }

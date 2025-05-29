@@ -1,31 +1,44 @@
+/* Fondo desenfocado */
+.background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .background::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('/assets/poo.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
-  filter: blur(4px) brightness(0.6);
 }
+
+/* Barra de navegación */
 .barra-navegacion {
   position: fixed;
   top: 0;
-  width: 89%;
+  width: 90%;
   color: rgb(0, 0, 0);
   padding: 1rem;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.7); /* opcional: fondo translúcido */
   z-index: 1000;
 }
 
+/* Rejilla de notas */
 .grid-notas {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding: 5rem 1rem 1rem;
+  padding: 6rem 1rem 1rem;
 }
 
+/* Nota individual */
 .nota {
   padding: 1rem;
   border-radius: 8px;
@@ -49,16 +62,18 @@
   background-color: #B10DC9;
 }
 
-/* Estilos extra para etiquetas */
+/* Etiqueta categoría */
 .categoria {
   display: inline-block;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+/* Botón flotante volver */
 .fab-back {
   position: fixed;
-  bottom: 80px; /* un poco más arriba que el botón + */
+  bottom: 80px;
   right: 16px;
   width: 56px;
   height: 56px;

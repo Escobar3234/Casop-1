@@ -1,15 +1,15 @@
-<body class="background"></body>
-<div class="barra-navegacion">
-  <h2>Notas</h2>
-</div>
-
-<div class="grid-notas">
-  <div class="nota" *ngFor="let nota of notas" [ngClass]="nota.categoria">
-    <h3>{{ nota.titulo }}</h3>
-    <p>{{ nota.contenido }}</p>
-    <span class="categoria">{{ nota.categoria }}</span>
+<div class="background">
+  <div class="barra-navegacion">
+    <h2>Notas</h2>
   </div>
+
+  <div class="grid-notas">
+    <div class="nota" *ngFor="let nota of notas" [ngClass]="nota.categoria">
+      <h3>{{ nota.titulo }}</h3>
+      <p>{{ nota.contenido }}</p>
+      <span class="categoria">{{ nota.categoria }}</span>
+    </div>
+  </div>
+
+  <button class="fab-back" (click)="irAInicio()">←</button>
 </div>
-<button class="fab-back" (click)="irAInicio()">
-  ←
-</button>
