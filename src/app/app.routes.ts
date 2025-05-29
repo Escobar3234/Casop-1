@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'opciones', component: OpcionesComponent },
   {path: 'h-inico', component: HInicoComponent},
-  { path: 'notas/:fecha', component: NotasComponent },
+  { path: 'frecuencia', component: FrecuenciaComponent },
   { path: 'notas-vista', component: NotasVistaComponent },
   { path: 'notas', component: NotasComponent },
   { path: 'nueva-nota', component: NuevaNotaComponent}
